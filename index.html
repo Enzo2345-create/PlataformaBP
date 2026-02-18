@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil Plural</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Brasil Plural</h2>
+        <nav>
+            <ul>
+                <li onclick="filtrarPosts('todos')">🏠 Início</li>
+                <li onclick="filtrarPosts('indigena')">🌿 Povos Indígenas</li>
+                <li onclick="filtrarPosts('afro')">✊ Cultura Afro</li>
+                <li onclick="filtrarPosts('imigracao')">🌍 Imigração</li>
+                <li onclick="filtrarPosts('dados')">📊 Dados</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="feed-area">
+
+        <header class="topbar">
+            <input type="text" id="searchInput" placeholder="Pesquisar..." onkeyup="pesquisarPost()">
+        </header>
+
+        <section id="feed" class="feed">
+            <!-- Posts serão inseridos via JavaScript -->
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
