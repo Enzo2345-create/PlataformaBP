@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brasil Plural</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma Prisma</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <h2>Brasil Plural</h2>
-        <nav>
-            <ul>
-                <li onclick="filtrarPosts('todos')">🏠 Início</li>
-                <li onclick="filtrarPosts('indigena')">🌿 Povos Indígenas</li>
-                <li onclick="filtrarPosts('afro')">✊ Cultura Afro</li>
-                <li onclick="filtrarPosts('imigracao')">🌍 Imigração</li>
-                <li onclick="filtrarPosts('dados')">📊 Dados</li>
-            </ul>
-        </nav>
-    </aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo-area">
+      <div class="logo-circle"></div>
+      <h2>Plataforma<br><span>PRISMA</span></h2>
+    </div>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="feed-area">
+    <nav class="menu">
+      <button>🏠 Início</button>
+      <button>📰 Notícias</button>
+      <button>📚 Artigos</button>
+      <button>📖 Glossário</button>
+      <button>📊 Dados</button>
+      <button>🎨 Cultura</button>
+      <button>🗣 Comunidade</button>
+      <button>❓ Quiz</button>
+    </nav>
+  </aside>
 
-        <header class="topbar">
-            <input type="text" id="searchInput" placeholder="Pesquisar..." onkeyup="pesquisarPost()">
-        </header>
+  <!-- CONTEÚDO -->
+  <main class="content">
 
-        <section id="feed" class="feed">
-            <!-- Posts serão inseridos via JavaScript -->
-        </section>
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="search"></div>
+      <div class="profile"></div>
+    </header>
 
-    </main>
+    <!-- GRID -->
+    <section class="grid">
+
+      <div class="card big"></div>
+
+      <div class="bottom-grid">
+        <div class="card tall"></div>
+
+        <div class="right-column">
+          <div class="card small"></div>
+          <div class="card small"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
 
 </div>
 
