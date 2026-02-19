@@ -1,72 +1,113 @@
-const posts = [
-    {
-        titulo: "A influência africana na cultura brasileira",
-        conteudo: "A música, culinária e religião brasileira possuem fortes raízes africanas.",
-        categoria: "afro",
-        curtidas: 0
-    },
-    {
-        titulo: "Diversidade cultural e desenvolvimento cognitivo",
-        conteudo: "Ambientes culturalmente diversos estimulam maior flexibilidade cognitiva.",
-        categoria: "dados",
-        curtidas: 0
-    },
-    {
-        titulo: "Povos indígenas e preservação ambiental",
-        conteudo: "As comunidades indígenas desempenham papel fundamental na proteção da biodiversidade.",
-        categoria: "indigena",
-        curtidas: 0
-    },
-    {
-        titulo: "Imigração e formação da identidade brasileira",
-        conteudo: "Italianos, japoneses, árabes e outros povos contribuíram para nossa cultura.",
-        categoria: "imigracao",
-        curtidas: 0
-    }
-];
+// ===============================
+// 🎬 ANIMAÇÃO DE ENTRADA
+// ===============================
+window.addEventListener("load", () => {
+  document.body.style.opacity = "0";
+  document.body.style.transition = "opacity 0.6s ease";
 
-function renderPosts(lista) {
-    const feed = document.getElementById("feed");
-    feed.innerHTML = "";
+  setTimeout(() => {
+    document.body.style.opacity = "1";
+  }, 50);
+});
 
-    lista.forEach((post, index) => {
-        feed.innerHTML += `
-            <div class="post">
-                <h3>${post.titulo}</h3>
-                <p>${post.conteudo}</p>
-                <button onclick="curtirPost(${index})">
-                    ❤️ Curtir (${post.curtidas})
-                </button>
-            </div>
-        `;
+// ===============================
+// 🧭 MENU ATIVO + HOVER
+// ===============================
+const menuButtons = document.querySelectorAll(".menu button");
+
+menuButtons.forEach(btn => {
+
+  // Hover suave
+  btn.addEventListener("mouseenter", () => {
+    btn.style.transform = "translateX(6px)";
+    btn.style.transition = "all 0.25s ease";
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = "translateX(0)";
+  });
+
+  // Clique ativo
+  btn.addEventListener("click", () => {
+    menuButtons.forEach(b => {
+      b.classList.remove("active");
+      b.style.background = "#cfcfcf";
     });
+
+    btn.classList.add("active");
+    btn.style.background = "#a5a5a5";
+
+    rippleEffect(btn);
+  });
+});
+
+// ===============================
+// 💧 EFEITO RIPPLE
+// ===============================
+function rippleEffect(button) {
+  const ripple = document.createElement("span");
+
+  ripple.style.position = "absolute";
+  ripple.style.width = "10px";
+  ripple.style.height = "10px";
+  ripple.style.background = "rgba(255,255,255,0.6)";
+  ripple.style.borderRadius = "50%";
+  ripple.style.pointerEvents = "none";
+  ripple.style.transform = "scale(0)";
+  ripple.style.animation = "ripple 0.6s ease-out";
+
+  button.style.position = "relative";
+  button.style.overflow = "hidden";
+
+  button.appendChild(ripple);
+
+  setTimeout(() => ripple.remove(), 600);
 }
 
-function curtirPost(index) {
-    posts[index].curtidas++;
-    renderPosts(posts);
+// cria keyframes via JS (evita mexer no CSS)
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes ripple {
+  to {
+    transform: scale(20);
+    opacity: 0;
+  }
 }
+`;
+document.head.appendChild(style);
 
-function filtrarPosts(categoria) {
-    if (categoria === "todos") {
-        renderPosts(posts);
-    } else {
-        const filtrados = posts.filter(post => post.categoria === categoria);
-        renderPosts(filtrados);
-    }
+// ===============================
+// 📦 ANIMAÇÃO DOS CARDS
+// ===============================
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-6px) scale(1.02)";
+    card.style.boxShadow = "0 12px 25px rgba(0,0,0,0.15)";
+    card.style.transition = "all 0.25s ease";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0) scale(1)";
+    card.style.boxShadow = "none";
+  });
+
+});
+
+// ===============================
+// 🔍 HOVER NA TOPBAR
+// ===============================
+const search = document.querySelector(".search");
+
+if (search) {
+  search.addEventListener("mouseenter", () => {
+    search.style.transform = "scale(1.02)";
+    search.style.transition = "0.2s ease";
+  });
+
+  search.addEventListener("mouseleave", () => {
+    search.style.transform = "scale(1)";
+  });
 }
-
-function pesquisarPost() {
-    const termo = document.getElementById("searchInput").value.toLowerCase();
-
-    const filtrados = posts.filter(post =>
-        post.titulo.toLowerCase().includes(termo) ||
-        post.conteudo.toLowerCase().includes(termo)
-    );
-
-    renderPosts(filtrados);
-}
-
-window.onload = () => {
-    renderPosts(posts);
-};
