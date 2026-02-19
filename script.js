@@ -1,10 +1,15 @@
 "use strict";
 
 // ================= CARDS HOVER =================
+// ================= CARDS HOVER =================
+function isDesktop() {
+  return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+}
+
 document.querySelectorAll(".card").forEach(card => {
 
   card.addEventListener("mouseenter", () => {
-    if (window.innerWidth > 900) {
+    if (isDesktop()) {
       card.style.transform = "translateY(-6px) scale(1.02)";
       card.style.boxShadow = "0 12px 25px rgba(0,0,0,0.15)";
     }
@@ -12,10 +17,11 @@ document.querySelectorAll(".card").forEach(card => {
 
   card.addEventListener("mouseleave", () => {
     card.style.transform = "none";
-    card.style.boxShadow = "none";
+    card.style.boxShadow = "";
   });
 
 });
+
 
 // ================= MENU MOBILE =================
 const toggle = document.getElementById("menuToggle");

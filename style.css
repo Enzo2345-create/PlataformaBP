@@ -137,12 +137,15 @@ body {
 }
 
 /* ================= MOBILE ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
 
+  /* botão menu */
   .menu-toggle {
     display: block;
   }
 
+  /* sidebar */
   .sidebar {
     position: fixed;
     left: 0;
@@ -155,19 +158,51 @@ body {
     transform: translateX(0);
   }
 
+  /* conteúdo */
   .content {
-    padding-top: 60px;
+    padding: 70px 14px 30px;
   }
 
+  /* topbar mais clean */
+  .topbar {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .profile {
+    width: 80px;
+  }
+
+  /* ================= FEED SOCIAL ================= */
+
+  .feed {
+    gap: 16px;
+  }
+
+  /* card base estilo post */
+  .card {
+    border-radius: 18px;
+    min-height: 180px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+
+  /* card grande vira post principal */
+  .card-large {
+    height: 260px;
+  }
+
+  /* 🔥 GRID VIRA COLUNA SOCIAL */
   .card-grid {
     display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 10px;
+    flex-direction: column;
+    gap: 16px;
+    overflow: visible;
+    padding: 0;
   }
 
   .card-grid .card {
-    min-width: 260px;
-    flex: 0 0 auto;
+    min-width: 100%;
+    flex: none;
   }
+
 }
