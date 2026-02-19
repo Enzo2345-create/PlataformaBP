@@ -9,10 +9,25 @@ body {
   background: #e6e6e6;
 }
 
+/* BOTÃO MOBILE */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  border: none;
+  background: #1e3a5f;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
 /* LAYOUT */
 .layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* SIDEBAR */
@@ -22,6 +37,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 .logo-area {
@@ -38,10 +54,6 @@ body {
   border-radius: 50%;
 }
 
-.logo-area span {
-  color: #2e7d32;
-}
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -55,11 +67,6 @@ body {
   border-radius: 20px;
   text-align: left;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.menu button:hover {
-  background: #bdbdbd;
 }
 
 /* CONTENT */
@@ -101,9 +108,9 @@ body {
 .card {
   background: #7fb8a6;
   border-radius: 25px;
+  transition: 0.25s;
 }
 
-/* TAMANHOS */
 .big {
   height: 180px;
 }
@@ -127,4 +134,50 @@ body {
 
 .small {
   height: 120px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    padding: 80px 15px 20px 15px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .search,
+  .profile {
+    width: 100%;
+    height: 40px;
+  }
+
+  .bottom-grid {
+    flex-direction: column;
+  }
+
+  .tall,
+  .right-column {
+    width: 100%;
+  }
 }

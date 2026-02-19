@@ -111,3 +111,45 @@ if (search) {
     search.style.transform = "scale(1)";
   });
 }
+
+// ===== MENU MOBILE =====
+const toggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+
+toggle.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+
+// ===== FECHAR AO CLICAR FORA =====
+document.addEventListener("click", (e) => {
+  if (
+    window.innerWidth <= 900 &&
+    !sidebar.contains(e.target) &&
+    !toggle.contains(e.target)
+  ) {
+    sidebar.classList.remove("open");
+  }
+});
+
+// ===== HOVER CARDS =====
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-6px) scale(1.02)";
+    card.style.boxShadow = "0 12px 25px rgba(0,0,0,0.15)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "none";
+    card.style.boxShadow = "none";
+  });
+});
+
+// ===== MENU ATIVO =====
+document.querySelectorAll(".menu button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".menu button")
+      .forEach(b => b.style.background = "#cfcfcf");
+
+    btn.style.background = "#a5a5a5";
+  });
+});
