@@ -3,61 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma Prisma</title>
+  <title>Plataforma PRISMA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button class="menu-toggle" id="menuToggle">☰</button>
+  <!-- overlay mobile -->
+  <div id="overlay"></div>
 
-<div class="layout">
+  <!-- botão mobile -->
+  <button id="menuToggle" class="menu-toggle">☰</button>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="logo-area">
-      <div class="logo-circle"></div>
-      <h2>Plataforma<br><span>PRISMA</span></h2>
-    </div>
+  <div class="layout">
 
-    <nav class="menu">
-      <button>🏠 Início</button>
-      <button>📰 Notícias</button>
-      <button>📚 Artigos</button>
-      <button>📖 Glossário</button>
-      <button>📊 Dados</button>
-      <button>🎨 Cultura</button>
-      <button>🗣 Comunidade</button>
-      <button>❓ Quiz</button>
-    </nav>
-  </aside>
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="logo">Plataforma<br><strong>PRISMA</strong></div>
 
-  <!-- CONTEÚDO -->
-  <main class="content">
+      <nav>
+        <button class="menu-button active">🏠 Panorama</button>
+        <button class="menu-button">🧭 Atualidades</button>
+        <button class="menu-button">📜 Memória</button>
+        <button class="menu-button">🧠 Conceitos</button>
+        <button class="menu-button">📊 Retratos</button>
+        <button class="menu-button">🎨 Expressões</button>
+        <button class="menu-button">🗣 Comunidade</button>
+        <button class="menu-button">🧩 Desafio</button>
+      </nav>
 
-    <header class="topbar">
-      <div class="search"></div>
-      <div class="profile"></div>
-    </header>
+      <div class="sidebar-footer"></div>
+    </aside>
 
-    <section class="grid">
+    <!-- CONTEÚDO -->
+    <main class="content">
 
-      <div class="card big"></div>
+      <header class="topbar">
+        <div class="search"></div>
+        <div class="profile"></div>
+      </header>
 
-      <div class="bottom-grid">
-        <div class="card tall"></div>
+      <section class="feed">
 
-        <div class="right-column">
-          <div class="card small"></div>
-          <div class="card small"></div>
+        <div class="card card-large"></div>
+
+        <div class="card-grid">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
         </div>
-      </div>
 
-    </section>
+      </section>
 
-  </main>
+    </main>
+  </div>
 
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
