@@ -11,15 +11,19 @@ body {
 
 /* layout */
 .layout {
-  display: flex;
   min-height: 100vh;
 }
 
 /* SIDEBAR */
 .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 230px;
+  height: 100vh;
   background: #e8d9a8;
   padding: 20px;
+  overflow-y: auto;
   transition: transform 0.3s ease;
   z-index: 1001;
 }
@@ -52,8 +56,9 @@ body {
 
 /* CONTENT */
 .content {
-  flex: 1;
+  margin-left: 230px;
   padding: 20px;
+  max-width: 1400px;
 }
 
 /* TOPBAR */
@@ -160,7 +165,7 @@ body {
 
   /* conteúdo */
   .content {
-    padding: 70px 14px 30px;
+    margin-left: 0;
   }
 
   /* topbar mais clean */
