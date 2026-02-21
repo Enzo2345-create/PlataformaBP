@@ -8,113 +8,141 @@
 </head>
 <body>
 
-  <!-- overlay mobile -->
+  <!-- ================================================
+       OVERLAY — escurece o fundo no menu mobile
+  ================================================ -->
   <div id="overlay"></div>
 
-  <!-- botão mobile -->
-  <button id="menuToggle" class="menu-toggle">☰</button>
+  <!-- ================================================
+       BOTÃO HAMBURGER — visível só em mobile
+  ================================================ -->
+  <button id="btnMenu" class="btn-menu">☰</button>
 
   <div class="layout">
 
-    <!-- SIDEBAR -->
+    <!-- ================================================
+         SIDEBAR — menu lateral fixo
+    ================================================ -->
     <aside id="sidebar" class="sidebar">
+
       <div class="logo">Plataforma<br><strong>PRISMA</strong></div>
 
       <nav>
-        <button class="menu-button active">🏠 Início</button>
-        <button class="menu-button">🧭 Atualidades</button>
-        <button class="menu-button">📜 Memória</button>
-        <button class="menu-button">🧠 Conceitos</button>
-        <button class="menu-button">📊 Retratos</button>
-        <button class="menu-button">🎨 Expressões</button>
-        <button class="menu-button">🗣 Comunidade</button>
-        <button class="menu-button">🧩 Desafio</button>
+        <button class="btn-nav active">🏠 Início</button>
+        <button class="btn-nav">🧭 Atualidades</button>
+        <button class="btn-nav">📜 Memória</button>
+        <button class="btn-nav">🧠 Conceitos</button>
+        <button class="btn-nav">📊 Retratos</button>
+        <button class="btn-nav">🎨 Expressões</button>
+        <button class="btn-nav">🗣 Comunidade</button>
+        <button class="btn-nav">🧩 Desafio</button>
       </nav>
 
-      <div class="sidebar-footer"></div>
+      <div class="rodape-sidebar"></div>
+
     </aside>
+    <!-- /SIDEBAR -->
 
-    <!-- CONTEÚDO -->
-    <main class="content">
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+    ================================================ -->
+    <main class="conteudo">
 
+      <!-- TOPBAR: barra de pesquisa + perfil -->
       <header class="topbar">
-        <div class="search"></div>
-        <div class="profile"></div>
+        <div class="busca"></div>
+        <div class="perfil"></div>
       </header>
 
+      <!-- FEED: todos os blocos de conteúdo -->
       <section class="feed">
 
-            <!-- ===== SETOR 1 (SEU ATUAL) ===== -->
-            <div class="feed-sector sector-hero">
-                <div class="card card-large"></div>
+        <!-- ── BLOCO 1: Hero + grade de cards ── -->
+        <div class="bloco bloco-topo">
 
-                <div class="card-grid">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                </div>
-            </div>
+          <div class="card card-destaque"></div>
 
-            <!-- ===== SETOR 2 (lista tipo Google News) ===== -->
-            <div class="feed-sector sector-list">
-                <h2 class="sector-title">Recomendações</h2>
+          <div class="grade-cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
 
-                <div class="news-list">
-                <div class="news-item"></div>
-                <div class="news-item"></div>
-                <div class="news-item"></div>
-                <div class="news-item"></div>
-                <div class="news-item"></div>
-                <div class="news-item"></div>
-                </div>
-            </div>
+        </div>
+        <!-- /BLOCO 1 -->
 
-            <!-- ===== SETOR 3 (3 colunas) ===== -->
-            <div class="feed-sector sector-news-nature">
-                <h2 class="sector-title">Fontes</h2>
+        <!-- ── BLOCO 2: Lista de notícias ── -->
+        <div class="bloco bloco-recomendacoes">
 
-                <div class="nature-news-grid">
-                    <div class="nature-news-card"></div>
-                    <div class="nature-news-card"></div>
-                    <div class="nature-news-card"></div>
-                    <div class="nature-news-card"></div>
-                </div>
-            </div>
+          <h2 class="titulo-bloco">Recomendações</h2>
 
-            <!-- ===== SETOR 4 (fontes) ===== -->
-           <!-- ===== SETOR 4 — Artigos estilo Nature ===== -->
-            <div class="feed-sector sector-articles">
-                <h2 class="sector-title">Artigos de pesquisa mais recentes</h2>
+          <div class="lista-noticias">
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+          </div>
 
-                <div class="articles-list">
+        </div>
+        <!-- /BLOCO 2 -->
 
-                    <article class="article-item">
-                    <div class="article-meta">
-                        <span class="article-type">Artigo</span>
-                        <span class="article-date">19 fev 2026</span>
-                    </div>
-                    <h3 class="article-title"></h3>
-                    <p class="article-authors"></p>
-                    <div class="article-thumb"></div>
-                    </article>
+        <!-- ── BLOCO 3: Grade de fontes ── -->
+        <div class="bloco bloco-fontes">
 
-                    <article class="article-item">
-                    <div class="article-meta">
-                        <span class="article-type">Artigo</span>
-                        <span class="article-date">18 fev 2026</span>
-                    </div>
-                    <h3 class="article-title"></h3>
-                    <p class="article-authors"></p>
-                    <div class="article-thumb"></div>
-                    </article>
+          <h2 class="titulo-bloco">Fontes</h2>
 
-                </div>
-            </div>
-        </section>
+          <div class="grade-fontes">
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+          </div>
+
+        </div>
+        <!-- /BLOCO 3 -->
+
+        <!-- ── BLOCO 4: Artigos de pesquisa ── -->
+        <div class="bloco bloco-artigos">
+
+          <h2 class="titulo-bloco">Artigos de pesquisa mais recentes</h2>
+
+          <div class="lista-artigos">
+
+            <article class="artigo">
+              <div class="artigo-info">
+                <span class="artigo-tipo">Artigo</span>
+                <span class="artigo-data">19 fev 2026</span>
+              </div>
+              <h3 class="artigo-titulo"></h3>
+              <p class="artigo-autores"></p>
+              <div class="artigo-imagem"></div>
+            </article>
+
+            <article class="artigo">
+              <div class="artigo-info">
+                <span class="artigo-tipo">Artigo</span>
+                <span class="artigo-data">18 fev 2026</span>
+              </div>
+              <h3 class="artigo-titulo"></h3>
+              <p class="artigo-autores"></p>
+              <div class="artigo-imagem"></div>
+            </article>
+
+          </div>
+
+        </div>
+        <!-- /BLOCO 4 -->
+
       </section>
+      <!-- /FEED -->
 
     </main>
+    <!-- /CONTEÚDO PRINCIPAL -->
+
   </div>
+  <!-- /LAYOUT -->
 
   <script src="script.js"></script>
 </body>

@@ -1,3 +1,6 @@
+/* ================================================
+   RESET
+================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +12,24 @@ body {
   background: #f4f4f4;
 }
 
-/* layout */
+
+/* ================================================
+   LAYOUT GERAL
+================================================ */
 .layout {
   min-height: 100vh;
 }
 
-/* SIDEBAR */
+.conteudo {
+  margin-left: 230px;
+  padding: 20px;
+  max-width: 1400px;
+}
+
+
+/* ================================================
+   SIDEBAR
+================================================ */
 .sidebar {
   position: fixed;
   left: 0;
@@ -33,7 +48,7 @@ body {
   margin-bottom: 20px;
 }
 
-.menu-button {
+.btn-nav {
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
@@ -45,50 +60,65 @@ body {
   transition: all 0.25s ease;
 }
 
-.menu-button:hover {
+.btn-nav:hover {
   transform: translateX(5px);
   background: #bdbdbd;
 }
 
-.menu-button.active {
+.btn-nav.active {
   background: #cfcfcf;
 }
 
-/* CONTENT */
-.content {
-  margin-left: 230px;
-  padding: 20px;
-  max-width: 1400px;
-}
 
-/* TOPBAR */
+/* ================================================
+   TOPBAR
+================================================ */
 .topbar {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
 }
 
-.search {
+.busca {
   flex: 1;
   height: 40px;
   background: #ddd;
   border-radius: 8px;
 }
 
-.profile {
+.perfil {
   width: 120px;
   height: 40px;
   background: #ddd;
   border-radius: 8px;
 }
 
-/* FEED */
+
+/* ================================================
+   FEED — estrutura geral
+================================================ */
 .feed {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+.bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-bloco {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* ================================================
+   BLOCO 1 — Hero + grade de cards
+================================================ */
 .card {
   background: #8cc7b5;
   border-radius: 20px;
@@ -96,21 +126,139 @@ body {
   transition: all 0.25s ease;
 }
 
-.card-large {
+.card-destaque {
   height: 220px;
 }
 
-.card-grid {
+.grade-cards {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
-.card-grid .card:first-child {
+.grade-cards .card:first-child {
   grid-row: span 2;
 }
 
-/* overlay */
+
+/* ================================================
+   BLOCO 2 — Lista de notícias
+================================================ */
+.lista-noticias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.noticia {
+  height: 90px;
+  background: #e0e0e0;
+  border-radius: 14px;
+}
+
+
+/* ================================================
+   BLOCO 3 — Grade de fontes
+================================================ */
+.grade-fontes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card-fonte {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 220px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.25s ease;
+}
+
+
+/* ================================================
+   BLOCO 4 — Artigos de pesquisa
+================================================ */
+.lista-artigos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.artigo {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e6e6e6;
+  min-height: 120px;
+  transition: all 0.25s ease;
+}
+
+.artigo-info {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.artigo-titulo {
+  height: 20px;
+  background: #dcdcdc;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.artigo-autores {
+  height: 14px;
+  width: 60%;
+  background: #e5e5e5;
+  border-radius: 6px;
+}
+
+.artigo-imagem {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 90px;
+  height: 70px;
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+
+
+/* ================================================
+   CLASSES RESERVADAS (uso futuro)
+================================================ */
+.grade-colunas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.coluna {
+  min-height: 260px;
+  background: #e6e6e6;
+  border-radius: 18px;
+}
+
+.lista-fontes {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.card-fonte-extra {
+  min-width: 260px;
+  height: 180px;
+  background: #dcdcdc;
+  border-radius: 18px;
+}
+
+
+/* ================================================
+   OVERLAY (mobile)
+================================================ */
 #overlay {
   position: fixed;
   inset: 0;
@@ -126,8 +274,11 @@ body {
   pointer-events: all;
 }
 
-/* botão mobile */
-.menu-toggle {
+
+/* ================================================
+   BOTÃO HAMBURGER (mobile)
+================================================ */
+.btn-menu {
   display: none;
   position: fixed;
   top: 15px;
@@ -141,16 +292,18 @@ body {
   cursor: pointer;
 }
 
-/* ================= MOBILE ================= */
-/* ================= MOBILE ================= */
+
+/* ================================================
+   RESPONSIVO — max-width: 900px
+================================================ */
 @media (max-width: 900px) {
 
-  /* botão menu */
-  .menu-toggle {
+  /* Botão hamburger */
+  .btn-menu {
     display: block;
   }
 
-  /* sidebar */
+  /* Sidebar: escondida por padrão, abre com .open */
   .sidebar {
     position: fixed;
     left: 0;
@@ -163,41 +316,42 @@ body {
     transform: translateX(0);
   }
 
-  /* conteúdo */
-  .content {
+  /* Conteúdo ocupa a tela toda */
+  .conteudo {
     margin-left: 0;
   }
 
-  /* topbar mais clean */
+  /* Topbar */
   .topbar {
     gap: 10px;
     margin-bottom: 16px;
   }
 
-  .profile {
+  .perfil {
     width: 80px;
   }
 
-  /* ================= FEED SOCIAL ================= */
-
+  /* Feed geral */
   .feed {
     gap: 16px;
   }
 
-  /* card base estilo post */
+  .bloco {
+    gap: 16px;
+  }
+
+  /* Bloco 1 — cards em coluna */
   .card {
     border-radius: 18px;
     min-height: 180px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   }
 
-  /* card grande vira post principal */
-  .card-large {
+  .card-destaque {
     height: 260px;
   }
 
-  /* 🔥 GRID VIRA COLUNA SOCIAL */
-  .card-grid {
+  .grade-cards {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -205,177 +359,40 @@ body {
     padding: 0;
   }
 
-  .card-grid .card {
+  .grade-cards .card {
     min-width: 100%;
     flex: none;
   }
-}
 
-/* ================= SETORES ================= */
-
-.feed-sector {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sector-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* ===== SETOR 2 — lista ===== */
-
-.news-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.news-item {
-  height: 90px;
-  background: #e0e0e0;
-  border-radius: 14px;
-}
-
-/* ===== SETOR 3 — colunas ===== */
-
-.sector-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.column {
-  min-height: 260px;
-  background: #e6e6e6;
-  border-radius: 18px;
-}
-
-/* ===== SETOR 4 — fontes ===== */
-
-.sources-row {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.source-card {
-  min-width: 260px;
-  height: 180px;
-  background: #dcdcdc;
-  border-radius: 18px;
-}
-
-/* ================= MOBILE — FEED CONTÍNUO ================= */
-
-@media (max-width: 900px) {
-
-  .feed-sector {
-    gap: 16px;
-  }
-
-  /* setor 2 vira coluna */
-  .news-list {
+  /* Bloco 2 — lista em coluna única */
+  .lista-noticias {
     grid-template-columns: 1fr;
   }
 
-  /* setor 3 vira feed vertical */
-  .sector-columns {
+  /* Bloco 3 — grade em coluna única */
+  .grade-fontes {
     grid-template-columns: 1fr;
   }
 
-  .column {
-    min-height: 180px;
-  }
-
-  /* fontes continuam swipeáveis */
-  .source-card {
-    min-width: 220px;
-  }
-
-}
-
-/* ================= NATURE NEWS ================= */
-
-.nature-news-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.nature-news-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 14px;
-  min-height: 220px;
-  border: 1px solid #e5e5e5;
-  transition: all 0.25s ease;
-}
-
-/* ================= ARTIGOS NATURE ================= */
-
-.articles-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.article-item {
-  position: relative;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 18px;
-  border: 1px solid #e6e6e6;
-  min-height: 120px;
-  transition: all 0.25s ease;
-}
-
-.article-meta {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 6px;
-}
-
-.article-title {
-  height: 20px;
-  background: #dcdcdc;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.article-authors {
-  height: 14px;
-  width: 60%;
-  background: #e5e5e5;
-  border-radius: 6px;
-}
-
-.article-thumb {
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  width: 90px;
-  height: 70px;
-  background: #d0d0d0;
-  border-radius: 10px;
-}
-
-/* ================= MOBILE AJUSTES ================= */
-
-@media (max-width: 900px) {
-
-  .nature-news-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .article-thumb {
+  /* Bloco 4 — imagem ocupa largura total */
+  .artigo-imagem {
     position: static;
     width: 100%;
     height: 140px;
     margin-top: 10px;
+  }
+
+  /* Classes reservadas */
+  .grade-colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .coluna {
+    min-height: 180px;
+  }
+
+  .card-fonte-extra {
+    min-width: 220px;
   }
 
 }

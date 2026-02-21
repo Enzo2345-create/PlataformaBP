@@ -1,19 +1,23 @@
 "use strict";
 
-// ================= CARDS HOVER =================
-// ================= CARDS HOVER =================
-// ================= HOVER GLOBAL =================
-function isDesktop() {
+/* ================================================
+   UTILITÁRIO — detecta se é desktop (mouse real)
+================================================ */
+function isMouse() {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 }
 
-const hoverItems = document.querySelectorAll(
-  ".card, .news-item, .nature-news-card, .article-item, .source-card, .column"
+
+/* ================================================
+   HOVER — efeito de elevação nos cards e itens
+================================================ */
+const itensHover = document.querySelectorAll(
+  ".card, .noticia, .card-fonte, .artigo, .card-fonte-extra, .coluna"
 );
 
-hoverItems.forEach(el => {
+itensHover.forEach(el => {
   el.addEventListener("mouseenter", () => {
-    if (isDesktop()) {
+    if (isMouse()) {
       el.style.transform = "translateY(-6px)";
       el.style.boxShadow = "0 12px 25px rgba(0,0,0,0.12)";
     }
@@ -26,12 +30,14 @@ hoverItems.forEach(el => {
 });
 
 
-// ================= MENU MOBILE =================
-const toggle = document.getElementById("menuToggle");
+/* ================================================
+   MENU MOBILE — abre/fecha sidebar com overlay
+================================================ */
+const btnMenu = document.getElementById("btnMenu");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
 
-toggle.addEventListener("click", () => {
+btnMenu.addEventListener("click", () => {
   sidebar.classList.toggle("open");
   overlay.classList.toggle("show");
 });
@@ -41,14 +47,15 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("show");
 });
 
-// ================= MENU ATIVO =================
-document.querySelectorAll(".menu-button").forEach(btn => {
-  btn.addEventListener("click", () => {
 
-    document.querySelectorAll(".menu-button")
+/* ================================================
+   MENU ATIVO — marca o botão clicado como .active
+================================================ */
+document.querySelectorAll(".btn-nav").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".btn-nav")
       .forEach(b => b.classList.remove("active"));
 
     btn.classList.add("active");
-
   });
 });
