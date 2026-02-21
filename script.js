@@ -2,24 +2,27 @@
 
 // ================= CARDS HOVER =================
 // ================= CARDS HOVER =================
+// ================= HOVER GLOBAL =================
 function isDesktop() {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 }
 
-document.querySelectorAll(".card").forEach(card => {
+const hoverItems = document.querySelectorAll(
+  ".card, .news-item, .nature-news-card, .article-item, .source-card, .column"
+);
 
-  card.addEventListener("mouseenter", () => {
+hoverItems.forEach(el => {
+  el.addEventListener("mouseenter", () => {
     if (isDesktop()) {
-      card.style.transform = "translateY(-6px) scale(1.02)";
-      card.style.boxShadow = "0 12px 25px rgba(0,0,0,0.15)";
+      el.style.transform = "translateY(-6px)";
+      el.style.boxShadow = "0 12px 25px rgba(0,0,0,0.12)";
     }
   });
 
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "none";
-    card.style.boxShadow = "";
+  el.addEventListener("mouseleave", () => {
+    el.style.transform = "none";
+    el.style.boxShadow = "";
   });
-
 });
 
 

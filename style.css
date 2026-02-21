@@ -292,3 +292,85 @@ body {
   }
 
 }
+
+/* ================= NATURE NEWS ================= */
+
+.nature-news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.nature-news-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 220px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.25s ease;
+}
+
+/* ================= ARTIGOS NATURE ================= */
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.article-item {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e6e6e6;
+  min-height: 120px;
+  transition: all 0.25s ease;
+}
+
+.article-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.article-title {
+  height: 20px;
+  background: #dcdcdc;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.article-authors {
+  height: 14px;
+  width: 60%;
+  background: #e5e5e5;
+  border-radius: 6px;
+}
+
+.article-thumb {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 90px;
+  height: 70px;
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+
+/* ================= MOBILE AJUSTES ================= */
+
+@media (max-width: 900px) {
+
+  .nature-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-thumb {
+    position: static;
+    width: 100%;
+    height: 140px;
+    margin-top: 10px;
+  }
+
+}
