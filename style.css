@@ -204,5 +204,91 @@ body {
     min-width: 100%;
     flex: none;
   }
+}
+
+/* ================= SETORES ================= */
+
+.feed-sector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sector-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== SETOR 2 — lista ===== */
+
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.news-item {
+  height: 90px;
+  background: #e0e0e0;
+  border-radius: 14px;
+}
+
+/* ===== SETOR 3 — colunas ===== */
+
+.sector-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.column {
+  min-height: 260px;
+  background: #e6e6e6;
+  border-radius: 18px;
+}
+
+/* ===== SETOR 4 — fontes ===== */
+
+.sources-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.source-card {
+  min-width: 260px;
+  height: 180px;
+  background: #dcdcdc;
+  border-radius: 18px;
+}
+
+/* ================= MOBILE — FEED CONTÍNUO ================= */
+
+@media (max-width: 900px) {
+
+  .feed-sector {
+    gap: 16px;
+  }
+
+  /* setor 2 vira coluna */
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* setor 3 vira feed vertical */
+  .sector-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: 180px;
+  }
+
+  /* fontes continuam swipeáveis */
+  .source-card {
+    min-width: 220px;
+  }
 
 }
