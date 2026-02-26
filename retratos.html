@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retratos — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+      <header class="topbar">
+        <div class="busca"></div>
+        <div class="perfil"></div>
+      </header>
+
+      <section class="feed">
+
+        <!-- BLOCO 1: Título -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">📊 Retratos</h2>
+          <p class="subtitulo-bloco">Dados, estatísticas e análises quantitativas</p>
+        </div>
+
+        <!-- BLOCO 2: Cards de stats -->
+        <div class="bloco">
+          <div class="grade-stats">
+            <div class="card-stat">
+              <div class="stat-numero"></div>
+              <div class="stat-label"></div>
+            </div>
+            <div class="card-stat">
+              <div class="stat-numero"></div>
+              <div class="stat-label"></div>
+            </div>
+            <div class="card-stat">
+              <div class="stat-numero"></div>
+              <div class="stat-label"></div>
+            </div>
+            <div class="card-stat">
+              <div class="stat-numero"></div>
+              <div class="stat-label"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3: Gráficos -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Análises</h2>
+          <div class="grade-graficos">
+
+            <div class="card-grafico">
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha curta"></div>
+              <div class="grafico-placeholder"></div>
+            </div>
+
+            <div class="card-grafico">
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha curta"></div>
+              <div class="grafico-placeholder" style="height:150px; background:linear-gradient(180deg,#b4cfc9 0%,rgba(180,207,201,0.1) 100%);"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BLOCO 4: Segundo par de gráficos -->
+        <div class="bloco">
+          <div class="grade-graficos" style="grid-template-columns: 1fr 2fr;">
+            <div class="card-grafico">
+              <div class="placeholder ph-titulo"></div>
+              <div class="grafico-placeholder" style="border-radius:50%; width:140px; height:140px; margin:16px auto 0;"></div>
+            </div>
+            <div class="card-grafico">
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha curta" style="margin-bottom:14px;"></div>
+              <div class="grafico-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 5: Fontes de dados -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Fontes de dados</h2>
+          <div class="grade-fontes">
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+            <div class="card-fonte"></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

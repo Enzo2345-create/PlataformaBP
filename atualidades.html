@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualidades — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+      <header class="topbar">
+        <div class="busca"></div>
+        <div class="perfil"></div>
+      </header>
+
+      <section class="feed">
+
+        <!-- BLOCO 1: Filtros de categoria -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">🧭 Atualidades</h2>
+          <p class="subtitulo-bloco">Notícias e acontecimentos recentes</p>
+          <div class="linha-categoria">
+            <div class="tag-categoria ativa"></div>
+            <div class="tag-categoria"></div>
+            <div class="tag-categoria"></div>
+            <div class="tag-categoria"></div>
+            <div class="tag-categoria"></div>
+            <div class="tag-categoria"></div>
+          </div>
+        </div>
+
+        <!-- BLOCO 2: Destaque principal -->
+        <div class="bloco">
+          <div class="grade-destaque-atualidades">
+            <div class="card-noticia-grande"></div>
+            <div class="coluna-lateral-noticias">
+              <div class="noticia-lateral">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:8px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+              <div class="noticia-lateral">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:8px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+              <div class="noticia-lateral">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:8px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3: Grade de 3 colunas -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Mais notícias</h2>
+          <div class="grade-noticias-3col">
+            <div class="card-noticia-media">
+              <div class="card-galeria" style="min-height:120px; border-radius:14px 14px 0 0;"></div>
+              <div class="galeria-info">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:6px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+            </div>
+            <div class="card-noticia-media">
+              <div class="card-galeria" style="min-height:120px; border-radius:14px 14px 0 0; background:#c5d5cb;"></div>
+              <div class="galeria-info">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:6px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+            </div>
+            <div class="card-noticia-media">
+              <div class="card-galeria" style="min-height:120px; border-radius:14px 14px 0 0; background:#b8d4cc;"></div>
+              <div class="galeria-info">
+                <div class="placeholder ph-linha media"></div>
+                <div style="height:6px"></div>
+                <div class="placeholder ph-linha curta"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 4: Lista de notícias compacta -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Destaques rápidos</h2>
+          <div class="lista-noticias">
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+            <div class="noticia"></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

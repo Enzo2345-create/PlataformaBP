@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+      <header class="topbar">
+        <div class="busca"></div>
+        <div class="perfil"></div>
+      </header>
+
+      <section class="feed">
+
+        <!-- BLOCO 1: Título -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">🧩 Desafio</h2>
+          <p class="subtitulo-bloco">Missões, conquistas e ranking</p>
+        </div>
+
+        <!-- BLOCO 2: Desafio principal com progresso -->
+        <div class="bloco">
+          <div class="card-desafio-principal">
+            <div class="placeholder ph-titulo" style="background:rgba(255,255,255,0.6); height:24px; width:50%;"></div>
+            <div class="placeholder ph-linha" style="background:rgba(255,255,255,0.4);"></div>
+            <div class="placeholder ph-linha media" style="background:rgba(255,255,255,0.4);"></div>
+            <div>
+              <div class="placeholder ph-linha curta" style="background:rgba(255,255,255,0.5); height:12px; margin-bottom:8px;"></div>
+              <div class="barra-progresso">
+                <div class="barra-progresso-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3: Missões ativas -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Missões ativas</h2>
+          <div class="grade-desafios">
+
+            <div class="card-missao">
+              <div class="missao-status pendente"></div>
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div style="height:6px"></div>
+              <div class="barra-progresso" style="margin-top:8px;">
+                <div class="barra-progresso-fill" style="width:40%; background:var(--accent-dark);"></div>
+              </div>
+            </div>
+
+            <div class="card-missao">
+              <div class="missao-status concluido"></div>
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div style="height:6px"></div>
+              <div class="barra-progresso" style="margin-top:8px;">
+                <div class="barra-progresso-fill" style="width:100%; background:#5aaa6e;"></div>
+              </div>
+            </div>
+
+            <div class="card-missao">
+              <div class="missao-status pendente"></div>
+              <div class="placeholder ph-titulo"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div style="height:6px"></div>
+              <div class="barra-progresso" style="margin-top:8px;">
+                <div class="barra-progresso-fill" style="width:20%; background:var(--accent-dark);"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BLOCO 4: Conquistas -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Conquistas</h2>
+          <div class="grade-fontes">
+            <div class="card-fonte" style="min-height:130px; display:flex; flex-direction:column; align-items:center; gap:12px; padding:20px;">
+              <div style="width:52px; height:52px; border-radius:50%; background:var(--accent); opacity:.7;"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div class="placeholder ph-linha curta"></div>
+            </div>
+            <div class="card-fonte" style="min-height:130px; display:flex; flex-direction:column; align-items:center; gap:12px; padding:20px; opacity:.5;">
+              <div style="width:52px; height:52px; border-radius:50%; background:#bbb;"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div class="placeholder ph-linha curta"></div>
+            </div>
+            <div class="card-fonte" style="min-height:130px; display:flex; flex-direction:column; align-items:center; gap:12px; padding:20px;">
+              <div style="width:52px; height:52px; border-radius:50%; background:#e0b87a; opacity:.7;"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div class="placeholder ph-linha curta"></div>
+            </div>
+            <div class="card-fonte" style="min-height:130px; display:flex; flex-direction:column; align-items:center; gap:12px; padding:20px; opacity:.4;">
+              <div style="width:52px; height:52px; border-radius:50%; background:#bbb;"></div>
+              <div class="placeholder ph-linha media"></div>
+              <div class="placeholder ph-linha curta"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 5: Ranking -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Ranking</h2>
+          <div class="grade-ranking">
+
+            <div class="ranking-item" style="border-color:var(--accent); background:linear-gradient(90deg,rgba(140,199,181,0.12) 0%,#fff 100%);">
+              <span class="ranking-pos">1</span>
+              <div class="ranking-avatar" style="opacity:.8;"></div>
+              <div class="ranking-info">
+                <div class="placeholder ph-linha media" style="height:13px;"></div>
+                <div class="placeholder ph-linha curta" style="height:11px;"></div>
+              </div>
+              <div class="ranking-pontos"></div>
+            </div>
+
+            <div class="ranking-item">
+              <span class="ranking-pos" style="opacity:.7;">2</span>
+              <div class="ranking-avatar" style="opacity:.5;"></div>
+              <div class="ranking-info">
+                <div class="placeholder ph-linha media" style="height:13px;"></div>
+                <div class="placeholder ph-linha curta" style="height:11px;"></div>
+              </div>
+              <div class="ranking-pontos" style="opacity:.4;"></div>
+            </div>
+
+            <div class="ranking-item">
+              <span class="ranking-pos" style="opacity:.6;">3</span>
+              <div class="ranking-avatar" style="opacity:.4;"></div>
+              <div class="ranking-info">
+                <div class="placeholder ph-linha media" style="height:13px;"></div>
+                <div class="placeholder ph-linha curta" style="height:11px;"></div>
+              </div>
+              <div class="ranking-pontos" style="opacity:.3;"></div>
+            </div>
+
+            <div class="ranking-item" style="opacity:.6;">
+              <span class="ranking-pos" style="font-size:14px; color:#999;">4</span>
+              <div class="ranking-avatar" style="opacity:.3;"></div>
+              <div class="ranking-info">
+                <div class="placeholder ph-linha media" style="height:13px;"></div>
+                <div class="placeholder ph-linha curta" style="height:11px;"></div>
+              </div>
+              <div class="ranking-pontos" style="opacity:.25;"></div>
+            </div>
+
+            <div class="ranking-item" style="opacity:.5;">
+              <span class="ranking-pos" style="font-size:14px; color:#999;">5</span>
+              <div class="ranking-avatar" style="opacity:.25;"></div>
+              <div class="ranking-info">
+                <div class="placeholder ph-linha media" style="height:13px;"></div>
+                <div class="placeholder ph-linha curta" style="height:11px;"></div>
+              </div>
+              <div class="ranking-pontos" style="opacity:.2;"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,79 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma PRISMA</title>
+  <title>Início — Plataforma PRISMA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ================================================
-       OVERLAY — escurece o fundo no menu mobile
-  ================================================ -->
   <div id="overlay"></div>
-
-  <!-- ================================================
-       BOTÃO HAMBURGER — visível só em mobile
-  ================================================ -->
   <button id="btnMenu" class="btn-menu">☰</button>
 
   <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
 
-    <!-- ================================================
-         SIDEBAR — menu lateral fixo
-    ================================================ -->
-    <aside id="sidebar" class="sidebar">
-
-      <div class="logo">Plataforma<br><strong>PRISMA</strong></div>
-
-      <nav>
-        <button class="btn-nav active">🏠 Início</button>
-        <button class="btn-nav">🧭 Atualidades</button>
-        <button class="btn-nav">📜 Memória</button>
-        <button class="btn-nav">🧠 Conceitos</button>
-        <button class="btn-nav">📊 Retratos</button>
-        <button class="btn-nav">🎨 Expressões</button>
-        <button class="btn-nav">🗣 Comunidade</button>
-        <button class="btn-nav">🧩 Desafio</button>
-      </nav>
-
-      <div class="rodape-sidebar"></div>
-
-    </aside>
-    <!-- /SIDEBAR -->
-
-    <!-- ================================================
-         CONTEÚDO PRINCIPAL
-    ================================================ -->
     <main class="conteudo">
-
-      <!-- TOPBAR: barra de pesquisa + perfil -->
       <header class="topbar">
         <div class="busca"></div>
         <div class="perfil"></div>
       </header>
 
-      <!-- FEED: todos os blocos de conteúdo -->
       <section class="feed">
 
-        <!-- ── BLOCO 1: Hero + grade de cards ── -->
+        <!-- BLOCO 1: Hero + grade de cards -->
         <div class="bloco bloco-topo">
-
           <div class="card card-destaque"></div>
-
           <div class="grade-cards">
             <div class="card"></div>
             <div class="card"></div>
             <div class="card"></div>
           </div>
-
         </div>
-        <!-- /BLOCO 1 -->
 
-        <!-- ── BLOCO 2: Lista de notícias ── -->
+        <!-- BLOCO 2: Recomendações -->
         <div class="bloco bloco-recomendacoes">
-
           <h2 class="titulo-bloco">Recomendações</h2>
-
           <div class="lista-noticias">
             <div class="noticia"></div>
             <div class="noticia"></div>
@@ -84,30 +43,22 @@
             <div class="noticia"></div>
             <div class="noticia"></div>
           </div>
-
         </div>
-        <!-- /BLOCO 2 -->
 
-        <!-- ── BLOCO 3: Grade de fontes ── -->
+        <!-- BLOCO 3: Fontes -->
         <div class="bloco bloco-fontes">
-
           <h2 class="titulo-bloco">Fontes</h2>
-
           <div class="grade-fontes">
             <div class="card-fonte"></div>
             <div class="card-fonte"></div>
             <div class="card-fonte"></div>
             <div class="card-fonte"></div>
           </div>
-
         </div>
-        <!-- /BLOCO 3 -->
 
-        <!-- ── BLOCO 4: Artigos de pesquisa ── -->
+        <!-- BLOCO 4: Artigos -->
         <div class="bloco bloco-artigos">
-
           <h2 class="titulo-bloco">Artigos de pesquisa mais recentes</h2>
-
           <div class="lista-artigos">
 
             <article class="artigo">
@@ -131,18 +82,11 @@
             </article>
 
           </div>
-
         </div>
-        <!-- /BLOCO 4 -->
 
       </section>
-      <!-- /FEED -->
-
     </main>
-    <!-- /CONTEÚDO PRINCIPAL -->
-
   </div>
-  <!-- /LAYOUT -->
 
   <script src="script.js"></script>
 </body>
