@@ -7,115 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div id="overlay"></div>
   <button id="btnMenu" class="btn-menu">☰</button>
-
   <div class="layout">
     <aside id="sidebar" class="sidebar"></aside>
-
     <main class="conteudo">
-      <header class="topbar">
-        <div class="busca"></div>
-        <div class="perfil"></div>
-      </header>
-
+      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
       <section class="feed">
 
-        <!-- BLOCO 1: Título -->
         <div class="bloco">
           <h2 class="titulo-bloco">🗣 Comunidade</h2>
           <p class="subtitulo-bloco">Discussões e conexões entre membros</p>
         </div>
 
-        <!-- BLOCO 2: Membros em destaque -->
         <div class="bloco">
           <h2 class="titulo-bloco">Membros ativos</h2>
-          <div class="grade-usuarios">
-            <div class="card-usuario">
-              <div class="usuario-avatar"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-            <div class="card-usuario">
-              <div class="usuario-avatar" style="opacity:.4; background:#a8d0c4;"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-            <div class="card-usuario">
-              <div class="usuario-avatar" style="opacity:.5; background:#b4cfc9;"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-            <div class="card-usuario">
-              <div class="usuario-avatar" style="opacity:.45;"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-          </div>
+          <div class="grade-usuarios"></div>
         </div>
 
-        <!-- BLOCO 3: Feed de posts -->
         <div class="bloco">
           <h2 class="titulo-bloco">Discussões recentes</h2>
-          <div class="lista-posts">
-
-            <div class="post-card">
-              <div class="post-avatar"></div>
-              <div class="post-corpo">
-                <div class="placeholder ph-linha media"></div>
-                <div class="placeholder ph-linha" style="height:11px;"></div>
-                <div class="placeholder ph-linha curta" style="height:11px;"></div>
-                <div style="display:flex; gap:8px; margin-top:4px;">
-                  <div class="placeholder ph-badge" style="width:60px; height:20px;"></div>
-                  <div class="placeholder ph-badge" style="width:60px; height:20px; opacity:.3;"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="post-card">
-              <div class="post-avatar" style="opacity:.4; background:#a8d0c4;"></div>
-              <div class="post-corpo">
-                <div class="placeholder ph-linha media"></div>
-                <div class="placeholder ph-linha" style="height:11px;"></div>
-                <div style="display:flex; gap:8px; margin-top:4px;">
-                  <div class="placeholder ph-badge" style="width:60px; height:20px;"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="post-card">
-              <div class="post-avatar" style="opacity:.5; background:#b4cfc9;"></div>
-              <div class="post-corpo">
-                <div class="placeholder ph-linha media"></div>
-                <div class="placeholder ph-linha" style="height:11px;"></div>
-                <div class="placeholder ph-linha curta" style="height:11px;"></div>
-                <div style="display:flex; gap:8px; margin-top:4px;">
-                  <div class="placeholder ph-badge" style="width:60px; height:20px;"></div>
-                  <div class="placeholder ph-badge" style="width:60px; height:20px; opacity:.3;"></div>
-                  <div class="placeholder ph-badge" style="width:60px; height:20px; opacity:.2;"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="post-card">
-              <div class="post-avatar" style="opacity:.35;"></div>
-              <div class="post-corpo">
-                <div class="placeholder ph-linha media"></div>
-                <div class="placeholder ph-linha" style="height:11px;"></div>
-                <div style="display:flex; gap:8px; margin-top:4px;">
-                  <div class="placeholder ph-badge" style="width:60px; height:20px; opacity:.4;"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <div class="lista-posts"></div>
         </div>
 
       </section>
     </main>
   </div>
-
+  <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

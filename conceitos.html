@@ -7,38 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div id="overlay"></div>
   <button id="btnMenu" class="btn-menu">☰</button>
-
   <div class="layout">
     <aside id="sidebar" class="sidebar"></aside>
-
     <main class="conteudo">
-      <header class="topbar">
-        <div class="busca"></div>
-        <div class="perfil"></div>
-      </header>
-
+      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
       <section class="feed">
 
-        <!-- BLOCO 1: Título -->
         <div class="bloco">
           <h2 class="titulo-bloco">🧠 Conceitos</h2>
           <p class="subtitulo-bloco">Glossário e definições fundamentais</p>
         </div>
 
-        <!-- BLOCO 2: Destaque -->
         <div class="bloco">
-          <div class="destaque-conceito">
-            <div class="placeholder ph-titulo" style="background:rgba(255,255,255,0.5); height:22px; width:40%;"></div>
-            <div class="placeholder ph-linha" style="background:rgba(255,255,255,0.35);"></div>
-            <div class="placeholder ph-linha media" style="background:rgba(255,255,255,0.35);"></div>
-            <div class="placeholder ph-linha curta" style="background:rgba(255,255,255,0.35);"></div>
-          </div>
+          <div class="destaque-conceito"></div>
         </div>
 
-        <!-- BLOCO 3: Filtros -->
         <div class="bloco">
           <div class="linha-categoria">
             <div class="tag-categoria ativa"></div>
@@ -48,74 +33,24 @@
           </div>
         </div>
 
-        <!-- BLOCO 4: Grade de conceitos -->
         <div class="bloco">
           <h2 class="titulo-bloco">Todos os conceitos</h2>
           <div class="grade-conceitos">
-
-            <div class="card-conceito">
-              <div class="conceito-icone"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
-            <div class="card-conceito">
-              <div class="conceito-icone" style="opacity:.4; background:#a8d0c4;"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
-            <div class="card-conceito">
-              <div class="conceito-icone" style="opacity:.4; background:#b4cfc9;"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
-            <div class="card-conceito">
-              <div class="conceito-icone"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
-            <div class="card-conceito">
-              <div class="conceito-icone" style="opacity:.35;"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
-            <div class="card-conceito">
-              <div class="conceito-icone" style="opacity:.5; background:#c2ddd7;"></div>
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha media"></div>
-              <div style="height:6px"></div>
-              <div class="placeholder ph-linha curta"></div>
-            </div>
-
+            <div class="card-conceito"></div>
+            <div class="card-conceito"></div>
+            <div class="card-conceito"></div>
+            <div class="card-conceito"></div>
+            <div class="card-conceito"></div>
+            <div class="card-conceito"></div>
           </div>
         </div>
 
-        <!-- BLOCO 5: Artigos relacionados -->
         <div class="bloco">
           <h2 class="titulo-bloco">Artigos relacionados</h2>
           <div class="lista-artigos">
             <article class="artigo">
-              <div class="artigo-info">
-                <span class="artigo-tipo">Conceito</span>
-                <span class="artigo-data">15 jan 2026</span>
-              </div>
-              <h3 class="artigo-titulo"></h3>
-              <p class="artigo-autores"></p>
-              <div class="artigo-imagem"></div>
+              <div class="artigo-info"><span class="artigo-tipo">Conceito</span><span class="artigo-data"></span></div>
+              <h3 class="artigo-titulo"></h3><p class="artigo-autores"></p><div class="artigo-imagem"></div>
             </article>
           </div>
         </div>
@@ -123,7 +58,7 @@
       </section>
     </main>
   </div>
-
+  <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

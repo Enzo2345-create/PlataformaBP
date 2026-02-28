@@ -7,114 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div id="overlay"></div>
   <button id="btnMenu" class="btn-menu">☰</button>
-
   <div class="layout">
     <aside id="sidebar" class="sidebar"></aside>
-
     <main class="conteudo">
-      <header class="topbar">
-        <div class="busca"></div>
-        <div class="perfil"></div>
-      </header>
-
+      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
       <section class="feed">
 
-        <!-- BLOCO 1: Título -->
         <div class="bloco">
           <h2 class="titulo-bloco">🎨 Expressões</h2>
           <p class="subtitulo-bloco">Arte, cultura e manifestações criativas</p>
         </div>
 
-        <!-- BLOCO 2: Filtros -->
         <div class="bloco">
-          <div class="linha-categoria">
-            <div class="tag-categoria ativa"></div>
-            <div class="tag-categoria"></div>
-            <div class="tag-categoria"></div>
-            <div class="tag-categoria"></div>
-            <div class="tag-categoria"></div>
-          </div>
+          <div class="linha-categoria"></div>
         </div>
 
-        <!-- BLOCO 3: Galeria destaque -->
         <div class="bloco">
-          <div class="grade-galeria">
-            <div class="card-galeria grande destaque"></div>
-            <div class="card-galeria" style="background:#c8d9d4;"></div>
-            <div class="card-galeria" style="background:#b4cfc9;"></div>
-            <div class="card-galeria" style="background:#a0c0b8;"></div>
-          </div>
-        </div>
-
-        <!-- BLOCO 4: Grade regular com info -->
-        <div class="bloco">
-          <h2 class="titulo-bloco">Mais expressões</h2>
-          <div class="grade-galeria">
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#c8d9d4; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#b4cfc9; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#8cc7b5; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#a8d4c8; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#d5e8e3; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-            <div class="card-branco" style="padding:0; overflow:hidden;">
-              <div style="background:#c0dbd4; min-height:140px; border-radius:14px 14px 0 0;"></div>
-              <div class="galeria-info">
-                <div class="placeholder ph-linha media"></div>
-                <div style="height:6px"></div>
-                <div class="placeholder ph-linha curta"></div>
-              </div>
-            </div>
-
-          </div>
+          <div class="grade-galeria-real"></div>
         </div>
 
       </section>
     </main>
   </div>
-
+  <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

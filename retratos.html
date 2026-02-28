@@ -7,85 +7,64 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div id="overlay"></div>
   <button id="btnMenu" class="btn-menu">☰</button>
-
   <div class="layout">
     <aside id="sidebar" class="sidebar"></aside>
-
     <main class="conteudo">
-      <header class="topbar">
-        <div class="busca"></div>
-        <div class="perfil"></div>
-      </header>
-
+      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
       <section class="feed">
 
-        <!-- BLOCO 1: Título -->
         <div class="bloco">
           <h2 class="titulo-bloco">📊 Retratos</h2>
-          <p class="subtitulo-bloco">Dados, estatísticas e análises quantitativas</p>
+          <p class="subtitulo-bloco">Dados, estatísticas e análises quantitativas do Brasil</p>
         </div>
 
-        <!-- BLOCO 2: Cards de stats -->
         <div class="bloco">
           <div class="grade-stats">
-            <div class="card-stat">
-              <div class="stat-numero"></div>
-              <div class="stat-label"></div>
-            </div>
-            <div class="card-stat">
-              <div class="stat-numero"></div>
-              <div class="stat-label"></div>
-            </div>
-            <div class="card-stat">
-              <div class="stat-numero"></div>
-              <div class="stat-label"></div>
-            </div>
-            <div class="card-stat">
-              <div class="stat-numero"></div>
-              <div class="stat-label"></div>
-            </div>
+            <div class="card-stat"></div>
+            <div class="card-stat"></div>
+            <div class="card-stat"></div>
+            <div class="card-stat"></div>
           </div>
         </div>
 
-        <!-- BLOCO 3: Gráficos -->
         <div class="bloco">
           <h2 class="titulo-bloco">Análises</h2>
           <div class="grade-graficos">
-
             <div class="card-grafico">
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha curta"></div>
-              <div class="grafico-placeholder"></div>
+              <div class="grafico-header">
+                <div class="grafico-titulo">Evolução do IDH brasileiro (2000–2025)</div>
+              </div>
+              <canvas id="graficoIDH" height="180"></canvas>
             </div>
-
             <div class="card-grafico">
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha curta"></div>
-              <div class="grafico-placeholder" style="height:150px; background:linear-gradient(180deg,#b4cfc9 0%,rgba(180,207,201,0.1) 100%);"></div>
+              <div class="grafico-header">
+                <div class="grafico-titulo">Coeficiente de Gini por região (2025)</div>
+              </div>
+              <canvas id="graficoGini" height="180"></canvas>
             </div>
-
           </div>
         </div>
 
-        <!-- BLOCO 4: Segundo par de gráficos -->
         <div class="bloco">
           <div class="grade-graficos" style="grid-template-columns: 1fr 2fr;">
             <div class="card-grafico">
-              <div class="placeholder ph-titulo"></div>
-              <div class="grafico-placeholder" style="border-radius:50%; width:140px; height:140px; margin:16px auto 0;"></div>
+              <div class="grafico-header">
+                <div class="grafico-titulo">Composição por raça/cor</div>
+                <div class="grafico-sub">IBGE 2025</div>
+              </div>
+              <canvas id="graficoRaca" height="220"></canvas>
             </div>
             <div class="card-grafico">
-              <div class="placeholder ph-titulo"></div>
-              <div class="placeholder ph-linha curta" style="margin-bottom:14px;"></div>
-              <div class="grafico-placeholder"></div>
+              <div class="grafico-header">
+                <div class="grafico-titulo">Renda média domiciliar por quintil (R$)</div>
+              </div>
+              <canvas id="graficoRenda" height="220"></canvas>
             </div>
           </div>
         </div>
 
-        <!-- BLOCO 5: Fontes de dados -->
         <div class="bloco">
           <h2 class="titulo-bloco">Fontes de dados</h2>
           <div class="grade-fontes">
@@ -99,7 +78,8 @@
       </section>
     </main>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
