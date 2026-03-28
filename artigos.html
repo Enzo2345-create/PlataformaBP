@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artigos — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+
+      <!-- Topbar com busca e perfil -->
+      <header class="topbar">
+        <div class="busca">
+          <span class="busca-icon">🔍</span>
+          <input type="text" id="campoBusca" placeholder="Buscar artigos, autores, temas...">
+        </div>
+        <div class="perfil">
+          <button class="btn-perfil" id="btnAbrirPerfil">
+            <div class="avatar-mini" id="avatarTopbar">?</div>
+            <span id="nomeTopbar">Entrar</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="feed">
+
+        <!-- Cabeçalho da página -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">📄 Artigos de Pesquisa</h2>
+          <p class="subtitulo-bloco">Produções acadêmicas e análises sobre diversidade e inclusão étnico-racial</p>
+        </div>
+
+        <!-- ============================
+             Filtros por área temática
+        ============================= -->
+        <div class="bloco">
+          <div class="linha-categoria" id="filtrosArtigos">
+            <!-- Botões de filtro gerados pelo renderArtigos() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Lista principal de artigos
+             (inclui autores, datas, área)
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Todos os Artigos</h2>
+            <!-- Contador de artigos exibidos -->
+            <span id="contadorArtigos" style="font-size:13px; color:var(--text-muted); font-weight:600;"></span>
+          </div>
+          <div class="lista-artigos" id="listaArtigos">
+            <!-- Artigos com autores, área e resumo — gerados pelo renderArtigos() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Autores em destaque
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Autores em Destaque</h2>
+          <!-- Grade de cards de autores -->
+          <div class="grade-usuarios" id="gradeAutores">
+            <!-- Preenchido pelo renderArtigos() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Fontes / Repositórios
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Repositórios e Fontes Acadêmicas</h2>
+          <div class="grade-fontes" id="gradeFontesArtigos">
+            <!-- Preenchido pelo renderArtigos() -->
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal de perfil -->
+  <div id="modalPerfil" class="modal-overlay"></div>
+
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

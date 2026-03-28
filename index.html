@@ -4,70 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Início — Plataforma PRISMA</title>
+  <!-- Folha de estilos principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Overlay escurecido para o menu mobile -->
   <div id="overlay"></div>
-  <button id="btnMenu" class="btn-menu">☰</button>
+
+  <!-- Botão hamburguer (visível apenas em telas pequenas) -->
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
   <div class="layout">
+
+    <!-- SIDEBAR: injetada dinamicamente pelo script.js -->
     <aside id="sidebar" class="sidebar"></aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo">
-      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
+
+      <!-- TOPBAR: barra superior com busca e perfil -->
+      <header class="topbar">
+        <div class="busca">
+          <span class="busca-icon">🔍</span>
+          <input type="text" id="campoBusca" placeholder="Buscar artigos, notícias, conceitos...">
+        </div>
+        <div class="perfil">
+          <!-- Botão de perfil — preenchido pelo script.js conforme estado de login -->
+          <button class="btn-perfil" id="btnAbrirPerfil">
+            <div class="avatar-mini" id="avatarTopbar">?</div>
+            <span id="nomeTopbar">Entrar</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- FEED: conteúdo da página -->
       <section class="feed">
 
+        <!-- ============================
+             BLOCO 1 — Hero + Cards
+        ============================= -->
         <div class="bloco bloco-topo">
-          <div class="card card-destaque"></div>
-          <div class="grade-cards">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+
+          <div class="secao-header">
+            <h1 class="titulo-bloco">Brasil Plural</h1>
+          </div>
+          <p class="subtitulo-bloco">Diversidade, inclusão e identidade étnico-racial em um só lugar</p>
+
+          <!-- Grade principal: card destaque + cards menores -->
+          <div class="hero-grid">
+            <!-- Card destaque (grande, à esquerda) -->
+            <div class="card-hero" id="cardDestaque">
+              <!-- Preenchido pelo renderInicio() em script.js -->
+            </div>
+            <!-- Cards menores (à direita) -->
+            <div class="card-mini" id="cardMini1"></div>
+            <div class="card-mini" id="cardMini2"></div>
           </div>
         </div>
 
+        <!-- ============================
+             BLOCO 2 — Recomendações
+        ============================= -->
         <div class="bloco bloco-recomendacoes">
-          <h2 class="titulo-bloco">Recomendações</h2>
-          <div class="lista-noticias">
-            <div class="noticia"></div><div class="noticia"></div>
-            <div class="noticia"></div><div class="noticia"></div>
-            <div class="noticia"></div><div class="noticia"></div>
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Recomendações para você</h2>
+            <button class="btn-ver-mais">Ver todas</button>
+          </div>
+          <!-- Grade de itens recomendados -->
+          <div class="lista-items" id="listaRecomendacoes">
+            <!-- Itens gerados pelo renderInicio() -->
           </div>
         </div>
 
-        <div class="bloco bloco-fontes">
-          <h2 class="titulo-bloco">Fontes</h2>
-          <div class="grade-fontes">
-            <div class="card-fonte"></div><div class="card-fonte"></div>
-            <div class="card-fonte"></div><div class="card-fonte"></div>
-          </div>
-        </div>
-
+        <!-- ============================
+             BLOCO 3 — Artigos recentes (preview)
+        ============================= -->
         <div class="bloco bloco-artigos">
-          <h2 class="titulo-bloco">Artigos de pesquisa mais recentes</h2>
-          <div class="lista-artigos">
-            <article class="artigo">
-              <div class="artigo-info">
-                <span class="artigo-tipo">Artigo</span>
-                <span class="artigo-data"></span>
-              </div>
-              <h3 class="artigo-titulo"></h3>
-              <p class="artigo-autores"></p>
-              <div class="artigo-imagem"></div>
-            </article>
-            <article class="artigo">
-              <div class="artigo-info">
-                <span class="artigo-tipo">Artigo</span>
-                <span class="artigo-data"></span>
-              </div>
-              <h3 class="artigo-titulo"></h3>
-              <p class="artigo-autores"></p>
-              <div class="artigo-imagem"></div>
-            </article>
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Artigos em destaque</h2>
+            <a href="artigos.html" class="btn-ver-mais">Ver todos</a>
           </div>
+          <!-- Lista de artigos em destaque -->
+          <div class="lista-artigos" id="listaArtigosInicio">
+            <!-- Itens gerados pelo renderInicio() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             BLOCO 4 — Fontes
+        ============================= -->
+        <div class="bloco bloco-fontes">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Fontes e Referências</h2>
+            <button class="btn-ver-mais">Ver todas</button>
+          </div>
+          <!-- Grade de fontes de pesquisa -->
+          <div class="grade-fontes" id="gradeFontes">
+            <!-- Preenchido pelo renderInicio() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             BLOCO 5 — Notícias (preview)
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Últimas Notícias</h2>
+            <a href="noticias.html" class="btn-ver-mais">Ver todas</a>
+          </div>
+          <!-- Grade de notícias médias -->
+          <div class="grade-noticias-3col" id="gradeNoticiasInicio">
+            <!-- Preenchido pelo renderInicio() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             BLOCO 6 — Desafio do dia (preview)
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Desafio do Dia</h2>
+            <a href="desafios.html" class="btn-ver-mais">Ver desafios</a>
+          </div>
+          <!-- Card de desafio em miniatura -->
+          <div id="desafioMiniInicio"></div>
         </div>
 
       </section>
     </main>
   </div>
+
+  <!-- MODAL DE PERFIL / AUTENTICAÇÃO (injetado pelo script.js) -->
+  <div id="modalPerfil" class="modal-overlay">
+    <!-- Conteúdo inserido dinamicamente -->
+  </div>
+
+  <!-- Scripts: dados primeiro, depois lógica -->
   <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>

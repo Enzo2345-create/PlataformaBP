@@ -7,32 +7,115 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div id="overlay"></div>
-  <button id="btnMenu" class="btn-menu">☰</button>
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
   <div class="layout">
     <aside id="sidebar" class="sidebar"></aside>
+
     <main class="conteudo">
-      <header class="topbar"><div class="busca"></div><div class="perfil"></div></header>
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="busca">
+          <span class="busca-icon">🔍</span>
+          <input type="text" id="campoBusca" placeholder="Buscar discussões, membros, tópicos...">
+        </div>
+        <div class="perfil">
+          <button class="btn-perfil" id="btnAbrirPerfil">
+            <div class="avatar-mini" id="avatarTopbar">?</div>
+            <span id="nomeTopbar">Entrar</span>
+          </button>
+        </div>
+      </header>
+
       <section class="feed">
 
+        <!-- Cabeçalho da página -->
         <div class="bloco">
           <h2 class="titulo-bloco">🗣 Comunidade</h2>
-          <p class="subtitulo-bloco">Discussões e conexões entre membros</p>
+          <p class="subtitulo-bloco">Discussões e conexões sobre diversidade e inclusão étnico-racial</p>
         </div>
 
+        <!-- ============================
+             Widgets superiores: Tópicos + Discussão
+             (ficam lado a lado em desktop)
+        ============================= -->
         <div class="bloco">
-          <h2 class="titulo-bloco">Membros ativos</h2>
-          <div class="grade-usuarios"></div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+
+            <!-- Widget: ranking de tópicos mais discutidos -->
+            <div class="widget-topicos">
+              <h3 style="font-family:var(--font-display); font-size:16px; font-weight:700; color:var(--text); margin-bottom:2px;">
+                📈 Tópicos em Alta
+              </h3>
+              <p style="font-size:12px; color:var(--text-muted); margin-bottom:0;">
+                Assuntos mais debatidos esta semana
+              </p>
+              <!-- Lista de tópicos com ranking e tendência -->
+              <div class="topicos-lista" id="rankingTopicos">
+                <!-- Preenchido pelo renderComunidade() -->
+              </div>
+            </div>
+
+            <!-- Widget: trecho de discussão em destaque -->
+            <div class="widget-discussao">
+              <h3 style="font-family:var(--font-display); font-size:16px; font-weight:700; color:var(--text); margin-bottom:2px;">
+                💬 Discussão em Destaque
+              </h3>
+              <p style="font-size:12px; color:var(--text-muted);">
+                Um fragmento da conversa mais ativa
+              </p>
+              <!-- Bloco cinza com trecho + autor (sem texto real inventado) -->
+              <div class="discussao-trecho">
+                <p class="discussao-texto" id="trechoDiscussao">
+                  <!-- Trecho inserido pelo renderComunidade() -->
+                </p>
+              </div>
+              <!-- Metadados do autor da fala -->
+              <div class="discussao-meta" id="metaDiscussao">
+                <!-- Avatar e nome inseridos pelo renderComunidade() -->
+              </div>
+            </div>
+
+          </div>
         </div>
 
+        <!-- ============================
+             Membros ativos da semana
+        ============================= -->
         <div class="bloco">
-          <h2 class="titulo-bloco">Discussões recentes</h2>
-          <div class="lista-posts"></div>
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Membros Ativos</h2>
+          </div>
+          <!-- Grade de cards de usuário com avatar, especialidade e posts -->
+          <div class="grade-usuarios" id="gradeUsuarios">
+            <!-- Preenchido pelo renderComunidade() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Discussões recentes (posts)
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Discussões Recentes</h2>
+            <button class="btn-ver-mais" id="btnNovoPost">+ Nova Discussão</button>
+          </div>
+          <!-- Lista de posts com curtidas e comentários -->
+          <div class="lista-posts" id="listaPosts">
+            <!-- Preenchido pelo renderComunidade() -->
+          </div>
         </div>
 
       </section>
     </main>
   </div>
+
+  <!-- Modal de perfil -->
+  <div id="modalPerfil" class="modal-overlay"></div>
+
   <script src="dados.js"></script>
   <script src="script.js"></script>
 </body>

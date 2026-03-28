@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafios — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="busca">
+          <span class="busca-icon">🔍</span>
+          <input type="text" id="campoBusca" placeholder="Buscar missões, conquistas...">
+        </div>
+        <div class="perfil">
+          <button class="btn-perfil" id="btnAbrirPerfil">
+            <div class="avatar-mini" id="avatarTopbar">?</div>
+            <span id="nomeTopbar">Entrar</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="feed">
+
+        <!-- Cabeçalho da página -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">🧩 Desafios</h2>
+          <p class="subtitulo-bloco">Missões, conquistas e ranking da plataforma</p>
+        </div>
+
+        <!-- ============================
+             Barra de XP + Nível do usuário
+        ============================= -->
+        <div class="bloco">
+          <div class="card-xp">
+            <div class="xp-topo">
+              <div>
+                <div class="xp-label" id="xpTexto">Carregando...</div>
+              </div>
+              <!-- Exibe nível atual -->
+              <div class="xp-nivel" id="xpNivel">—</div>
+            </div>
+            <!-- Barra de progresso de XP -->
+            <div class="barra-xp-track">
+              <div class="barra-xp-fill" id="xpBar" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================
+             Widget de Ofensiva (streak)
+             Exibe dias consecutivos de quiz
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">🔥 Sua Ofensiva</h2>
+          </div>
+          <!-- Widget com chama e calendário de dias -->
+          <div class="widget-ofensiva" id="widgetOfensiva">
+            <!-- Preenchido pelo renderDesafios() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Desafio principal da semana
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Desafio da Semana</h2>
+          </div>
+          <!-- Card grande com progresso geral -->
+          <div class="card-desafio-principal" id="desafioPrincipal">
+            <!-- Preenchido pelo renderDesafios() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Missões ativas
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Missões Ativas</h2>
+          <!-- Grade de cards de missão com botão de avançar -->
+          <div class="grade-desafios" id="gradeMissoes">
+            <!-- Preenchido pelo renderDesafios() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Conquistas desbloqueáveis
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Conquistas</h2>
+          <!-- Grade com medalhas, bloqueadas ou não -->
+          <div class="conquistas-grade" id="gradeConquistas">
+            <!-- Preenchido pelo renderDesafios() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Ranking — abas Pessoal / Grupos
+        ============================= -->
+        <div class="bloco">
+          <div class="secao-header">
+            <h2 class="titulo-bloco">Ranking</h2>
+            <!-- Alternância entre ranking pessoal e de grupos -->
+            <div class="ranking-tabs" id="rankingTabs">
+              <button class="ranking-tab ativa" data-tab="pessoal">👤 Pessoal</button>
+              <button class="ranking-tab" data-tab="grupos">👥 Grupos</button>
+            </div>
+          </div>
+          <!-- Lista de posições do ranking ativo -->
+          <div class="grade-ranking" id="gradeRanking">
+            <!-- Preenchido pelo renderDesafios() -->
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal de perfil -->
+  <div id="modalPerfil" class="modal-overlay"></div>
+
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

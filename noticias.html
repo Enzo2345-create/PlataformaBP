@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias — Plataforma PRISMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="overlay"></div>
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="conteudo">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="busca">
+          <span class="busca-icon">🔍</span>
+          <input type="text" id="campoBusca" placeholder="Buscar notícias, fontes, temas...">
+        </div>
+        <div class="perfil">
+          <button class="btn-perfil" id="btnAbrirPerfil">
+            <div class="avatar-mini" id="avatarTopbar">?</div>
+            <span id="nomeTopbar">Entrar</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="feed">
+
+        <!-- Cabeçalho da página -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">🧭 Notícias</h2>
+          <p class="subtitulo-bloco">Acontecimentos recentes sobre diversidade, direitos e inclusão no Brasil</p>
+        </div>
+
+        <!-- ============================
+             Filtros de categoria
+        ============================= -->
+        <div class="bloco">
+          <div class="linha-categoria" id="filtrosNoticias">
+            <!-- Botões de categoria gerados pelo renderNoticias() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Destaque principal + lateral
+        ============================= -->
+        <div class="bloco">
+          <div class="grade-destaque-noticias">
+            <!-- Notícia destaque grande -->
+            <div class="card-noticia-grande" id="noticiaDestaque">
+              <!-- Preenchido pelo renderNoticias() -->
+            </div>
+            <!-- Coluna com notícias laterais menores -->
+            <div class="coluna-lateral-noticias" id="noticiasLaterais">
+              <!-- Preenchido pelo renderNoticias() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================
+             Grade de notícias médias
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Mais Notícias</h2>
+          <div class="grade-noticias-3col" id="gradeNoticias">
+            <!-- Preenchido pelo renderNoticias() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Destaques rápidos (lista)
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Destaques Rápidos</h2>
+          <div class="lista-items" id="listaNoticias">
+            <!-- Itens gerados pelo renderNoticias() -->
+          </div>
+        </div>
+
+        <!-- ============================
+             Fontes de notícias
+             (veículos e organizações)
+        ============================= -->
+        <div class="bloco">
+          <h2 class="titulo-bloco">Fontes e Veículos</h2>
+          <p class="subtitulo-bloco">Portais e organizações que acompanhamos regularmente</p>
+          <div class="grade-fontes-noticias" id="gradeFontesNoticias">
+            <!-- Preenchido pelo renderNoticias() -->
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal de perfil -->
+  <div id="modalPerfil" class="modal-overlay"></div>
+
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
